@@ -1,0 +1,290 @@
+.header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #dddddd;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* Logo */
+.logo {
+  flex-shrink: 0;
+}
+
+.logo a {
+  text-decoration: none;
+  color: #333333;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logoText {
+  font-size: 24px;
+  font-weight: 600;
+  color: #007bff;
+}
+
+/* Navigation */
+.nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.navList {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navLink {
+  color: #333333;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 200ms ease;
+  position: relative;
+}
+
+.navLink:hover {
+  color: #007bff;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #007bff;
+  transition: width 200ms ease;
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+/* Right Section */
+.rightSection {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+/* Search Bar */
+.searchBar {
+  display: flex;
+  align-items: center;
+  background-color: #f5f5f5;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  padding: 8px 12px;
+  gap: 8px;
+  min-width: 200px;
+}
+
+.searchInput {
+  flex: 1;
+  border: none;
+  background: none;
+  font-size: 14px;
+  color: #333333;
+  outline: none;
+}
+
+.searchInput::placeholder {
+  color: #999999;
+}
+
+.searchButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #666666;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 200ms ease;
+}
+
+.searchButton:hover {
+  color: #007bff;
+}
+
+/* Cart Button */
+.cartButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333333;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 200ms ease;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.cartButton:hover {
+  color: #007bff;
+}
+
+/* Menu Toggle (Mobile) */
+.menuToggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333333;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 200ms ease;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.menuToggle:hover {
+  color: #007bff;
+}
+
+.mobileOnly {
+  display: none;
+}
+
+/* Mobile Navigation */
+.mobileNav {
+  background-color: #ffffff;
+  border-bottom: 1px solid #dddddd;
+  padding: 16px;
+  display: none;
+}
+
+.mobileNavList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mobileNavLink {
+  color: #333333;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  display: block;
+  padding: 8px 0;
+  transition: color 200ms ease;
+}
+
+.mobileNavLink:hover {
+  color: #007bff;
+}
+
+/* Desktop Navigation */
+.desktopNav {
+  display: flex;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .container {
+    padding: 12px 16px;
+  }
+
+  .searchBar {
+    min-width: 150px;
+  }
+
+  .navList {
+    gap: 16px;
+  }
+
+  .navLink {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 12px 12px;
+  }
+
+  .desktopNav {
+    display: none;
+  }
+
+  .mobileOnly {
+    display: flex;
+  }
+
+  .mobileNav {
+    display: block;
+  }
+
+  .searchBar {
+    min-width: auto;
+    flex: 1;
+  }
+
+  .searchInput {
+    font-size: 14px;
+  }
+
+  .rightSection {
+    gap: 12px;
+  }
+
+  .cartButton {
+    min-width: 40px;
+    min-height: 40px;
+  }
+
+  .menuToggle {
+    min-width: 40px;
+    min-height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 12px 8px;
+    gap: 8px;
+  }
+
+  .logo {
+    flex-shrink: 0;
+  }
+
+  .logoText {
+    font-size: 20px;
+  }
+
+  .searchBar {
+    display: none;
+  }
+
+  .rightSection {
+    gap: 8px;
+  }
+}

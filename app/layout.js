@@ -1,4 +1,5 @@
 import './globals.css';
+import MainLayout from './components/layout/MainLayout';
 
 export const metadata = {
   title: 'E-Commerce Store - Quality Products at Great Prices',
@@ -19,7 +20,7 @@ export default function RootLayout({ children }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body>
-        {children}
+        <MainLayout>{children}</MainLayout>
       </body>
     </html>
   );
