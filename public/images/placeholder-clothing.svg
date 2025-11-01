@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="300" height="300">
+  <defs>
+    <linearGradient id="clothingGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffe7f1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffb3d9;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <rect width="300" height="300" fill="url(#clothingGradient)" />
+
+  <!-- T-shirt/Clothing icon -->
+  <g transform="translate(150, 130)">
+    <!-- Main body -->
+    <path
+      d="M -30 -20 L -15 0 L -15 40 Q 0 45 15 40 L 15 0 L 30 -20 Z"
+      fill="#ff69b4"
+      stroke="#ff1493"
+      stroke-width="2"
+    />
+
+    <!-- Left sleeve -->
+    <path
+      d="M -30 -20 L -50 0 L -20 5 Z"
+      fill="#ff69b4"
+      stroke="#ff1493"
+      stroke-width="2"
+    />
+
+    <!-- Right sleeve -->
+    <path
+      d="M 30 -20 L 50 0 L 20 5 Z"
+      fill="#ff69b4"
+      stroke="#ff1493"
+      stroke-width="2"
+    />
+
+    <!-- Neckline -->
+    <ellipse cx="0" cy="-20" rx="8" ry="6" fill="#ff1493" />
+  </g>
+
+  <text x="150" y="270" font-family="Arial, sans-serif" font-size="16" fill="#666666" text-anchor="middle">
+    Clothing
+  </text>
+</svg>
