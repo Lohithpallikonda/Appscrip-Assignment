@@ -1,3 +1,5 @@
+// Product listing page metadata for SEO
+// These meta tags help with search engine rankings and social media sharing
 export const metadata = {
   title: 'Products | E-Commerce Store - Shop Quality Items',
   description: 'Browse our wide selection of products including electronics, clothing, books, and more. Find great deals on quality items. Filter by category and discover thousands of items.',
@@ -33,7 +35,7 @@ export const metadata = {
 export default function ProductsLayout({ children }) {
   return (
     <>
-      {/* JSON-LD Schema Markup */}
+      {/* JSON-LD Schema Markup - helps Google understand the page structure */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

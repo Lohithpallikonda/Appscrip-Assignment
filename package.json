@@ -8,10 +8,21 @@
     "start": "next start",
     "lint": "next lint"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "ecommerce",
+    "nextjs",
+    "react",
+    "product-listing",
+    "ssr",
+    "isr"
+  ],
+  "author": "Lohith Pallikonda",
   "license": "ISC",
-  "description": "",
+  "description": "A modern e-commerce product listing page with Next.js 14, React 18, and pure CSS. Features SSR, ISR, advanced filtering, and SEO optimization.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Lohithpallikonda/Appscrip-Assignment.git"
+  },
   "dependencies": {
     "axios": "^1.6.0",
     "next": "^14.2.0",

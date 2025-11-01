@@ -4,15 +4,22 @@ import { useState } from 'react';
 import ProductGrid from './ProductGrid';
 import styles from '../../products/products.module.css';
 
+// This component handles all the client-side filtering logic
+// I kept it separate from the server component to make SSR work better
+// and to keep client state management isolated from server rendering
 export default function ProductsClient({ initialProducts, categories }) {
+  // Filter states - the user can update these and see results in real-time
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [priceRange, setPriceRange] = useState([0, 1000]);
   const [minRating, setMinRating] = useState(0);
 
+  // This was the trickiest part - filtering with multiple criteria at once
+  // I had to handle the rating object structure from the API (sometimes it's { rate: 4.5 })
   const filtered = initialProducts.filter(p => {
     const categoryMatch = !selectedCategory || p.category === selectedCategory;
     const priceMatch = p.price >= priceRange[0] && p.price <= priceRange[1];
+    // Had issues with API returning rating as object vs number - this handles both
     const ratingValue = typeof p.rating === 'object' ? p.rating.rate : p.rating;
     const ratingMatch = (ratingValue || 0) >= minRating;
     return categoryMatch && priceMatch && ratingMatch;
