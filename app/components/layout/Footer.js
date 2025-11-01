@@ -125,17 +125,17 @@ export default function Footer() {
             &copy; {currentYear} E-Commerce Store. All rights reserved.
           </p>
           <div className={styles.socialLinks}>
-            <a href="https://facebook.com" className={styles.socialLink} aria-label="Facebook">
-              f
+            <a href="https://facebook.com" className={styles.socialLink} aria-label="Facebook" title="Facebook">
+              <img src="/icons/facebook-icon.svg" alt="Facebook" width="24" height="24" />
             </a>
-            <a href="https://twitter.com" className={styles.socialLink} aria-label="Twitter">
-              𝕏
+            <a href="https://twitter.com" className={styles.socialLink} aria-label="Twitter / X" title="Twitter / X">
+              <img src="/icons/twitter-icon.svg" alt="Twitter" width="24" height="24" />
             </a>
-            <a href="https://instagram.com" className={styles.socialLink} aria-label="Instagram">
-              📷
+            <a href="https://instagram.com" className={styles.socialLink} aria-label="Instagram" title="Instagram">
+              <img src="/icons/instagram-icon.svg" alt="Instagram" width="24" height="24" />
             </a>
-            <a href="https://linkedin.com" className={styles.socialLink} aria-label="LinkedIn">
-              in
+            <a href="https://linkedin.com" className={styles.socialLink} aria-label="LinkedIn" title="LinkedIn">
+              <img src="/icons/linkedin-icon.svg" alt="LinkedIn" width="24" height="24" />
             </a>
           </div>
         </div>
