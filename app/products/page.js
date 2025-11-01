@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import ProductGrid from '../components/products/ProductGrid';
 import styles from './products.module.css';
 
 export default function Products() {
@@ -19,6 +20,11 @@ export default function Products() {
   const categories = ['electronics', 'clothing', 'books'];
   const filtered = selectedCategory ? products.filter(p => p.category === selectedCategory) : products;
 
+  const handleAddToCart = (product) => {
+    console.log('Added to cart:', product.title);
+    // Cart functionality will be implemented in later steps
+  };
+
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Our Products</h1>
@@ -30,6 +36,7 @@ export default function Products() {
           <button
             className={`${styles.filterBtn} ${!selectedCategory ? styles.active : ''}`}
             onClick={() => setSelectedCategory(null)}
+            aria-pressed={!selectedCategory}
           >
             All Products
           </button>
@@ -38,6 +45,7 @@ export default function Products() {
               key={cat}
               className={`${styles.filterBtn} ${selectedCategory === cat ? styles.active : ''}`}
               onClick={() => setSelectedCategory(cat)}
+              aria-pressed={selectedCategory === cat}
             >
               {cat.charAt(0).toUpperCase() + cat.slice(1)}
             </button>
@@ -47,27 +55,7 @@ export default function Products() {
 
       {/* Product Grid */}
       <section className={styles.main}>
-        <div className={styles.grid}>
-          {filtered.map(product => (
-            <article key={product.id} className={styles.card}>
-              <img
-                src={product.image}
-                alt={`${product.title} - ${product.category}`}
-                className={styles.image}
-                loading="lazy"
-              />
-              <h2 className={styles.productTitle}>{product.title}</h2>
-              <div className={styles.rating}>
-                <span className={styles.stars}>★★★★☆</span>
-                <span className={styles.ratingValue}>{product.rating}</span>
-              </div>
-              <div className={styles.priceSection}>
-                <span className={styles.price}>${product.price.toFixed(2)}</span>
-              </div>
-              <button className={styles.addToCartBtn}>Add to Cart</button>
-            </article>
-          ))}
-        </div>
+        <ProductGrid products={filtered} onAddToCart={handleAddToCart} />
       </section>
     </div>
   );
