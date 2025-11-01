@@ -39,8 +39,8 @@ A modern, responsive e-commerce product listing page built with Next.js 14, Reac
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/app-assignment.git
-cd app-assignment
+git clone https://github.com/Lohithpallikonda/Appscrip-Assignment.git
+cd Appscrip-Assignment
 ```
 
 2. Install dependencies:
