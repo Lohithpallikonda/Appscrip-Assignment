@@ -1,6 +1,10 @@
 import styles from './ProductCard.module.css';
 
 export default function ProductCard({ product, onAddToCart }) {
+  // Handle both direct rating (number) and API format (object with rate property)
+  const ratingValue = typeof product.rating === 'object' ? product.rating.rate : product.rating;
+  const ratingCount = typeof product.rating === 'object' ? product.rating.count : null;
+
   const renderStars = (rating) => {
     const fullStars = Math.floor(rating);
     const hasHalfStar = rating % 1 !== 0;
@@ -28,11 +32,11 @@ export default function ProductCard({ product, onAddToCart }) {
       </div>
 
       <div className={styles.rating}>
-        <span className={styles.stars} title={`${product.rating} out of 5 stars`}>
-          {renderStars(product.rating)}
+        <span className={styles.stars} title={`${ratingValue} out of 5 stars${ratingCount ? ` from ${ratingCount} reviews` : ''}`}>
+          {renderStars(ratingValue)}
         </span>
         <span className={styles.ratingValue}>
-          {product.rating}
+          {ratingValue.toFixed(1)}
         </span>
       </div>
 
